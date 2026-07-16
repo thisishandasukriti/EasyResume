@@ -1,0 +1,122 @@
+/* ----------------------------------------------------------------------
+ * assets/resume-base.css
+ * Shared reset loaded BEFORE every template's own style.css. Keeps print
+ * behaviour, box-sizing, and A4 page setup consistent across all 8
+ * templates without duplicating it in each one.
+ * Deliberately avoids: CSS Grid, position:fixed, animations, and
+ * webfont-only icons — all of which are unreliable in wkhtmltopdf/TCPDF.
+ * -------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.resume-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: var(--background, #ffffff);
+    color: var(--text, #1a1a1a);
+    position: relative;
+    overflow: hidden;
+    /* clip any accidental overflow instead of breaking layout */
+}
+
+.resume-page img {
+    max-width: 100%;
+    display: block;
+}
+
+.resume-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Placeholder token styling — only visible on blank templates / builder previews */
+.resume-page .ph {
+    color: #9a9a9a;
+    font-style: italic;
+}
+
+/* Generic section spacing hook every template can opt into */
+.resume-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.resume-entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* ----------------------------------------------------------------------
+ * Live / final resume — hide placeholder tokens and empty sections.
+ * Applied when body.mode-live is set by template-preview.php (?mode=live).
+ * Presentation layer only: ph() in resume_data.php is untouched.
+ * -------------------------------------------------------------------- */
+
+/* Hide any field that never got filled in */
+body.mode-live .resume-page .ph {
+    display: none !important;
+}
+
+/* Hide an entire section if every piece of visible content inside it
+   is a placeholder (i.e. nothing left after .ph elements are hidden).
+   Works by checking if the section contains ANY non-ph, non-heading
+   visible text nodes via the :has() selector where supported, and
+   falling back gracefully where it isn't (section stays visible). */
+body.mode-live .resume-page .resume-section:not(:has(*:not(.ph):not(h1):not(h2):not(h3):not(hr))) {
+    display: none !important;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: 210mm;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .resume-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+
+    /* Browsers strip background colors/images by default when printing
+     or saving as PDF (to save ink), which is why colored header bands,
+     sidebars, and pill backgrounds were rendering white. This forces
+     the browser to keep them. Standard property + WebKit prefix for
+     Chrome/Edge/Safari coverage. */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+}
+
+/* On-screen preview only: gives the page a card-like presence in the browser */
+@media screen {
+    body.resume-preview-screen {
+        background: #eef0f4;
+        padding: 32px 0 64px;
+    }
+
+    body.resume-preview-screen .resume-page {
+        box-shadow: 0 1px 3px rgba(20, 20, 30, 0.08), 0 18px 40px rgba(20, 20, 30, 0.12);
+    }
+}

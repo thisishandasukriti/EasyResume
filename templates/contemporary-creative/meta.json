@@ -1,0 +1,9 @@
+{
+  "id": "contemporary-creative",
+  "name": "Contemporary Creative",
+  "description": "Modern creative layout with subtle visual accents while remaining ATS-compatible. Balanced design for creative professionals.",
+  "category": "creative",
+  "thumbnail": "",
+  "features": ["Subtle accents", "ATS-compatible", "Creative flair", "Portfolio integration"],
+  "best_for": ["Design", "Marketing", "Creative industries", "Media"]
+}

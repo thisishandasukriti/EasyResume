@@ -1,0 +1,267 @@
+/* ----------------------------------------------------------------------
+ * assets/resume-themes.css
+ * SINGLE SOURCE OF TRUTH for every resume color theme.
+ *
+ * Each .theme-<id> block sets the full palette as CSS custom properties.
+ * Templates consume these variables (var(--primary), var(--heading),
+ * etc.) and contain NO theme-specific color rules of their own — only
+ * layout, spacing, typography and component structure.
+ *
+ * Theme class is applied directly to the root .resume-page element
+ * (e.g. class="resume-page resume contemporary-creative theme-ocean"),
+ * exactly as before — only difference is there is now ONE rule per
+ * theme instead of one per (template × theme) pair.
+ *
+ * Adding a new theme: add a block here + a matching entry in
+ * assets/resume_themes.php. No template file needs to change.
+ *
+ * Palette rules followed for every theme below:
+ *  - --background stays white/near-white: print + ATS + grayscale safe.
+ *  - --text stays a near-black neutral: body copy never uses the accent
+ *    color, keeping AA contrast regardless of theme.
+ *  - --primary / --heading carry the theme's personality; --accent is a
+ *    lighter tint of --primary for pills/tags/borders, never used for
+ *    body text.
+ *  - No gradients, no transparency-dependent colors: safe for browser
+ *    print / Save-as-PDF.
+ * -------------------------------------------------------------------- */
+
+/* ---------- Default / fallback palette ----------
+   Used when no theme-* class is present, so templates never render
+   with broken/missing variables. Matches the original "Orange" look. */
+.resume-page {
+    --primary: #E0532A;
+    --secondary: #2B2B2B;
+    --accent: #F2A488;
+    --background: #ffffff;
+    --surface: #fafafa;
+    --sidebar-bg: #2B2B2B;
+    --heading: #1E1E1E;
+    --text: #2B2B2B;
+    --muted: #6b6b6b;
+    --border: #e3dccc;
+    --link: #E0532A;
+    --focus: #2454FF;
+    --selection: #F2A488;
+}
+
+/* ---------- Executive Blue — Corporate, trustworthy, dark navy ---------- */
+.theme-executive {
+    --primary: #1F3A5F;
+    --secondary: #14253D;
+    --accent: #AFC4DB;
+    --background: #ffffff;
+    --surface: #F5F7FA;
+    --sidebar-bg: #14253D;
+    --heading: #14253D;
+    --text: #232323;
+    --muted: #6B7280;
+    --border: #D6DEE8;
+    --link: #1F3A5F;
+    --focus: #1F3A5F;
+    --selection: #AFC4DB;
+}
+
+/* ---------- Ocean — Modern, tech, blue with cyan accent ---------- */
+.theme-ocean {
+    --primary: #0077B6;
+    --secondary: #023E5C;
+    --accent: #90E0EF;
+    --background: #ffffff;
+    --surface: #F2FAFC;
+    --sidebar-bg: #023E5C;
+    --heading: #023E5C;
+    --text: #20272B;
+    --muted: #5C6B73;
+    --border: #CDEAF2;
+    --link: #0077B6;
+    --focus: #0077B6;
+    --selection: #90E0EF;
+}
+
+/* ---------- Forest — Professional, calm, deep green ---------- */
+.theme-forest {
+    --primary: #2D5A3D;
+    --secondary: #1B3A26;
+    --accent: #A9C8B2;
+    --background: #ffffff;
+    --surface: #F4F8F5;
+    --sidebar-bg: #1B3A26;
+    --heading: #1B3A26;
+    --text: #232723;
+    --muted: #65766B;
+    --border: #D6E5DA;
+    --link: #2D5A3D;
+    --focus: #2D5A3D;
+    --selection: #A9C8B2;
+}
+
+/* ---------- Emerald — Modern startup, bright but professional ---------- */
+.theme-emerald {
+    --primary: #0E9F6E;
+    --secondary: #0B6E4E;
+    --accent: #A7E8CF;
+    --background: #ffffff;
+    --surface: #F1FBF6;
+    --sidebar-bg: #0B6E4E;
+    --heading: #0B6E4E;
+    --text: #20251F;
+    --muted: #5E6F66;
+    --border: #CDEEDD;
+    --link: #0E9F6E;
+    --focus: #0E9F6E;
+    --selection: #A7E8CF;
+}
+
+/* ---------- Burgundy — Executive, luxury, elegant ---------- */
+.theme-burgundy {
+    --primary: #7A1F2B;
+    --secondary: #4D1119;
+    --accent: #D9AEB3;
+    --background: #ffffff;
+    --surface: #FBF4F4;
+    --sidebar-bg: #4D1119;
+    --heading: #4D1119;
+    --text: #262020;
+    --muted: #75686A;
+    --border: #E8D2D5;
+    --link: #7A1F2B;
+    --focus: #7A1F2B;
+    --selection: #D9AEB3;
+}
+
+/* ---------- Royal — Rich indigo, creative professionals ---------- */
+.theme-royal {
+    --primary: #4338CA;
+    --secondary: #2C2480;
+    --accent: #C7C2F0;
+    --background: #ffffff;
+    --surface: #F5F4FC;
+    --sidebar-bg: #2C2480;
+    --heading: #2C2480;
+    --text: #232233;
+    --muted: #686691;
+    --border: #DEDAF4;
+    --link: #4338CA;
+    --focus: #4338CA;
+    --selection: #C7C2F0;
+}
+
+/* ---------- Slate — Minimal, soft grey, excellent ATS appearance ---------- */
+.theme-slate {
+    --primary: #475569;
+    --secondary: #334155;
+    --accent: #C4CCD6;
+    --background: #ffffff;
+    --surface: #F8FAFC;
+    --sidebar-bg: #334155;
+    --heading: #334155;
+    --text: #25282D;
+    --muted: #6B7480;
+    --border: #E2E8F0;
+    --link: #475569;
+    --focus: #475569;
+    --selection: #C4CCD6;
+}
+
+/* ---------- Graphite — Modern monochrome, dark neutral ---------- */
+.theme-graphite {
+    --primary: #2E2E33;
+    --secondary: #1A1A1D;
+    --accent: #C9C9CE;
+    --background: #ffffff;
+    --surface: #F6F6F7;
+    --sidebar-bg: #1A1A1D;
+    --heading: #1A1A1D;
+    --text: #232325;
+    --muted: #6E6E73;
+    --border: #DCDCDF;
+    --link: #2E2E33;
+    --focus: #2E2E33;
+    --selection: #C9C9CE;
+}
+
+/* ---------- Charcoal — Executive black, very clean ---------- */
+.theme-charcoal {
+    --primary: #1C1C1F;
+    --secondary: #000000;
+    --accent: #B7B7BC;
+    --background: #ffffff;
+    --surface: #F5F5F6;
+    --sidebar-bg: #1C1C1F;
+    --heading: #1C1C1F;
+    --text: #1E1E1E;
+    --muted: #6A6A6E;
+    --border: #D9D9DC;
+    --link: #1C1C1F;
+    --focus: #1C1C1F;
+    --selection: #B7B7BC;
+}
+
+/* ---------- Navy — Traditional business resume ---------- */
+.theme-navy {
+    --primary: #1E3A5F;
+    --secondary: #102338;
+    --accent: #A9C0DA;
+    --background: #ffffff;
+    --surface: #F3F6FA;
+    --sidebar-bg: #102338;
+    --heading: #102338;
+    --text: #20242B;
+    --muted: #636C78;
+    --border: #D7E0EC;
+    --link: #1E3A5F;
+    --focus: #1E3A5F;
+    --selection: #A9C0DA;
+}
+
+/* ---------- Sunset — Warm orange, friendly, creative, not garish ---------- */
+.theme-sunset {
+    --primary: #C2542E;
+    --secondary: #8C3A1E;
+    --accent: #F0C4AC;
+    --background: #ffffff;
+    --surface: #FCF5F1;
+    --sidebar-bg: #8C3A1E;
+    --heading: #8C3A1E;
+    --text: #292320;
+    --muted: #7A6D64;
+    --border: #F0DCCF;
+    --link: #C2542E;
+    --focus: #C2542E;
+    --selection: #F0C4AC;
+}
+
+/* ---------- Sandstone — Warm neutral, beige/taupe, elegant paper feel ---------- */
+.theme-sandstone {
+    --primary: #9C7B53;
+    --secondary: #6B5436;
+    --accent: #E3D2BB;
+    --background: #ffffff;
+    --surface: #FAF7F2;
+    --sidebar-bg: #6B5436;
+    --heading: #5A4730;
+    --text: #2A2520;
+    --muted: #7E7264;
+    --border: #E9DFCF;
+    --link: #9C7B53;
+    --focus: #9C7B53;
+    --selection: #E3D2BB;
+}
+
+/* ---------- Ivory — Clean off-white, minimal, editorial ---------- */
+.theme-ivory {
+    --primary: #6B6456;
+    --secondary: #3F3A30;
+    --accent: #D8D2C2;
+    --background: #FFFEFB;
+    --surface: #F8F6F1;
+    --sidebar-bg: #3F3A30;
+    --heading: #3F3A30;
+    --text: #2A2722;
+    --muted: #837C6D;
+    --border: #E5E0D4;
+    --link: #6B6456;
+    --focus: #6B6456;
+    --selection: #D8D2C2;
+}

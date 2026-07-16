@@ -1,0 +1,145 @@
+/* ------------------------------------------------------------------
+ * templates/contemporary-creative/style.css
+ * Layout: solid-color header band (name/title/contact in white), then
+ * a single-column body with pill-style skill tags and a small colored
+ * marker before each heading. Modern but ATS-safe: no background
+ * images, no icon fonts, no text rendered inside images.
+ *
+ * Sprint 2 / Phase 2: color no longer lives here. All --primary,
+ * --accent, --heading, --text etc. now come from assets/resume-themes.css
+ * (loaded before this file). This stylesheet only defines layout,
+ * spacing, typography and component structure, plus one composed
+ * variable (--band-bg) that's local to this template's own layout.
+ * ------------------------------------------------------------------ */
+
+.resume.contemporary-creative {
+  --band-bg: var(--primary);
+
+  --font-heading: 'Poppins', Arial, sans-serif;
+  --font-body: 'Inter', Arial, sans-serif;
+
+  font-family: var(--font-body);
+  font-size: 10.2pt;
+  line-height: 1.5;
+}
+
+.contemporary-creative .cc-band {
+  background: var(--band-bg);
+  color: #ffffff;
+  padding: 13mm 16mm 8mm;
+}
+
+.contemporary-creative .cc-name {
+  font-family: var(--font-heading);
+  font-size: 20pt;
+  font-weight: 700;
+  margin: 0 0 1.6mm;
+  letter-spacing: -0.01em;
+}
+
+.contemporary-creative .cc-title {
+  font-family: var(--font-heading);
+  font-size: 10.6pt;
+  font-weight: 500;
+  margin: 0 0 4mm;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.contemporary-creative .cc-contact {
+  font-size: 8.8pt;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.contemporary-creative .cc-body {
+  padding: 9mm 16mm 14mm;
+}
+
+.contemporary-creative .cc-heading {
+  font-family: var(--font-heading);
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--heading);
+  margin: 0 0 3.4mm;
+  padding-left: 3mm;
+  border-left: 3px solid var(--primary);
+}
+
+.contemporary-creative .cc-section {
+  margin-bottom: 6.6mm;
+}
+
+.contemporary-creative .cc-section p {
+  margin: 0 0 1.4mm;
+  font-size: 9.6pt;
+}
+
+.contemporary-creative .cc-pills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8mm;
+}
+
+.contemporary-creative .cc-pills li {
+  background: #fff;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 999px;
+  padding: 1.2mm 3.2mm;
+  font-size: 8.6pt;
+  font-weight: 500;
+}
+
+.contemporary-creative .cc-entry {
+  margin-bottom: 4.6mm;
+}
+
+.contemporary-creative .cc-entry-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+}
+
+.contemporary-creative .cc-entry-title {
+  font-family: var(--font-heading);
+  font-size: 10.4pt;
+  font-weight: 600;
+  margin: 0;
+  color: var(--heading);
+}
+
+.contemporary-creative .cc-entry-sub {
+  font-size: 9.2pt;
+  color: var(--primary);
+  margin: 0.4mm 0 0;
+  font-weight: 500;
+}
+
+.contemporary-creative .cc-entry-date {
+  font-size: 8.4pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.contemporary-creative .cc-entry-desc p {
+  margin: 1.4mm 0 0;
+  font-size: 9.4pt;
+}
+
+.contemporary-creative .cc-simple-list {
+  margin: 0;
+  padding-left: 4mm;
+  font-size: 9.4pt;
+}
+
+.contemporary-creative .cc-simple-list li {
+  margin-bottom: 1.4mm;
+}
+
+.contemporary-creative .cc-dim {
+  color: var(--muted);
+  font-size: 8.6pt;
+}

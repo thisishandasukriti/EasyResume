@@ -1,0 +1,114 @@
+/* ------------------------------------------------------------------
+ * templates/clean-academic/style.css
+ * Layout: centered serif header, single column, Education prioritized
+ * before Experience. Generous line-height, small-caps section labels,
+ * thin rules instead of color blocks.
+ *
+ * Sprint 2 / Phase 2: color comes entirely from assets/resume-themes.css.
+ * ------------------------------------------------------------------ */
+
+.resume.clean-academic {
+  --font-heading: 'Source Serif Pro', Georgia, serif;
+  --font-body: 'Source Serif Pro', Georgia, serif;
+
+  font-family: var(--font-body);
+  font-size: 10.4pt;
+  line-height: 1.6;
+  padding: 17mm 18mm 14mm;
+}
+
+.clean-academic .ca-header {
+  text-align: center;
+}
+
+.clean-academic .ca-name {
+  font-size: 18pt;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.6mm;
+  color: var(--heading);
+}
+
+.clean-academic .ca-title {
+  font-size: 10.4pt;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0 0 2.6mm;
+}
+
+.clean-academic .ca-contact {
+  font-size: 9pt;
+  color: var(--muted);
+  margin: 0;
+}
+
+.clean-academic .ca-rule {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 5mm 0 7mm;
+}
+
+.clean-academic .ca-heading {
+  font-size: 10.6pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin: 0 0 3mm;
+}
+
+.clean-academic .ca-section {
+  margin-bottom: 6.6mm;
+}
+
+.clean-academic .ca-section p {
+  margin: 0 0 1.6mm;
+}
+
+.clean-academic .ca-entry {
+  margin-bottom: 4.6mm;
+}
+
+.clean-academic .ca-entry-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+  font-size: 10pt;
+}
+
+.clean-academic .ca-entry-title {
+  color: var(--heading);
+}
+
+.clean-academic .ca-entry-date {
+  color: var(--muted);
+  font-size: 9pt;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.clean-academic .ca-entry-sub {
+  font-size: 9pt;
+  color: var(--muted);
+  margin: 0.6mm 0 0;
+}
+
+.clean-academic .ca-entry-desc p {
+  margin: 1.4mm 0 0;
+  font-size: 9.6pt;
+}
+
+.clean-academic .ca-list {
+  margin: 0;
+  padding-left: 5mm;
+  font-size: 9.6pt;
+}
+
+.clean-academic .ca-list li {
+  margin-bottom: 1.6mm;
+}
+
+.clean-academic .ca-reference {
+  font-size: 9.6pt;
+  margin: 0 0 1.8mm;
+}

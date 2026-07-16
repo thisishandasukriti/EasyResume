@@ -1,0 +1,9 @@
+{
+  "id": "executive-professional",
+  "name": "Executive Professional",
+  "description": "Premium layout with strong visual hierarchy, designed for senior leaders. Emphasizes achievements and leadership impact.",
+  "category": "executive",
+  "thumbnail": "",
+  "features": ["Achievement-focused", "Leadership highlights", "Premium typography", "Board-ready"],
+  "best_for": ["C-Suite", "VP/Director", "Senior Management", "Consultants"]
+}

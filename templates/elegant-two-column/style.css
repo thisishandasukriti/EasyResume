@@ -1,0 +1,158 @@
+/* ------------------------------------------------------------------
+ * templates/elegant-two-column/style.css
+ * Layout: centered serif header, then two columns split by a hairline
+ * vertical rule (38% / 62%). Quiet, editorial feel.
+ * ------------------------------------------------------------------ */
+
+.resume.elegant-two-column {
+
+  --font-heading: 'Source Serif Pro', Georgia, serif;
+  --font-body: 'Inter', Arial, sans-serif;
+
+  font-family: var(--font-body);
+  font-size: 10.2pt;
+  line-height: 1.5;
+  padding: 15mm 15mm 13mm;
+}
+
+.elegant-two-column .e2c-header {
+  text-align: center;
+  margin-bottom: 8mm;
+}
+
+.elegant-two-column .e2c-name {
+  font-family: var(--font-heading);
+  font-size: 20pt;
+  font-weight: 600;
+  color: var(--heading);
+  margin: 0 0 1.6mm;
+}
+
+.elegant-two-column .e2c-title {
+  font-size: 10.4pt;
+  color: var(--primary);
+  letter-spacing: 0.03em;
+  margin: 0 0 3mm;
+}
+
+.elegant-two-column .e2c-contact {
+  font-size: 8.8pt;
+  color: var(--secondary);
+  margin: 0;
+}
+
+.elegant-two-column .e2c-columns {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid #e3e0ea;
+  padding-top: 7mm;
+}
+
+.elegant-two-column .e2c-col-left {
+  flex: 0 0 36%;
+  padding-right: 6mm;
+  border-right: 1px solid #e3e0ea;
+}
+
+.elegant-two-column .e2c-col-right {
+  flex: 1;
+  padding-left: 6mm;
+  min-width: 0;
+}
+
+.elegant-two-column .e2c-heading {
+  font-family: var(--font-heading);
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.02em;
+  margin: 0 0 3mm;
+}
+
+.elegant-two-column .e2c-block {
+  margin-bottom: 7mm;
+}
+
+.elegant-two-column .e2c-block p {
+  margin: 0 0 1.4mm;
+}
+
+.elegant-two-column .e2c-list-plain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 9.4pt;
+}
+
+.elegant-two-column .e2c-list-plain li {
+  margin-bottom: 2mm;
+}
+
+.elegant-two-column .e2c-dim {
+  color: var(--secondary);
+  font-size: 8.6pt;
+  display: block;
+}
+
+.elegant-two-column .e2c-entry {
+  margin-bottom: 5mm;
+}
+
+.elegant-two-column .e2c-entry-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 3mm;
+}
+
+.elegant-two-column .e2c-entry-title {
+  font-weight: 600;
+  font-size: 10pt;
+  color: var(--heading);
+  margin: 0;
+}
+
+.elegant-two-column .e2c-entry-sub {
+  font-size: 9.2pt;
+  color: var(--primary);
+  margin: 0.4mm 0 0;
+}
+
+.elegant-two-column .e2c-entry-date {
+  font-size: 8.4pt;
+  color: var(--secondary);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.elegant-two-column .e2c-entry-desc p {
+  font-size: 9.2pt;
+  margin: 1.4mm 0 0;
+}
+
+.elegant-two-column .e2c-inline {
+  font-size: 9.2pt;
+  margin: 0;
+}
+
+.elegant-two-column .e2c-reference {
+  font-size: 9.2pt;
+  margin: 0 0 3mm;
+}
+
+@media (max-width: 900px) {
+  .elegant-two-column .e2c-columns {
+    flex-direction: column;
+  }
+
+  .elegant-two-column .e2c-col-left {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid #e3e0ea;
+    padding-bottom: 6mm;
+    margin-bottom: 6mm;
+  }
+
+  .elegant-two-column .e2c-col-right {
+    padding-left: 0;
+  }
+}

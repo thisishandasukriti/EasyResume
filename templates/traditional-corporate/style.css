@@ -1,0 +1,188 @@
+/* ------------------------------------------------------------------
+ * templates/traditional-corporate/style.css
+ * Layout: single column, centered header, full-width stacked sections
+ * separated by rule lines. No color blocks, no sidebar — conservative
+ * by design. Override the variables below to recolor; never duplicate
+ * this file for a new color.
+ * ------------------------------------------------------------------ */
+
+.resume.traditional-corporate {
+  --primary: #1F2A44;
+  --secondary: #44506B;
+  --accent: #8A6D3B;
+  --background: #ffffff;
+  --text: #232323;
+  --heading: #1F2A44;
+
+  --font-heading: 'Source Sans Pro', Arial, sans-serif;
+  --font-body: 'Source Sans Pro', Arial, sans-serif;
+
+  font-family: var(--font-body);
+  font-size: 10.4pt;
+  line-height: 1.5;
+  padding: 16mm 16mm 14mm;
+}
+
+
+.resume.traditional-corporate.theme-blue {
+  --primary: #2454FF;
+  --accent: #BFD0FF;
+}
+
+.resume.traditional-corporate.theme-green {
+  --primary: #2E7D32;
+  --accent: #C8E6C9;
+}
+
+.resume.traditional-corporate.theme-purple {
+  --primary: #6C63FF;
+  --accent: #D9D4FF;
+}
+
+.resume.traditional-corporate.theme-red {
+  --primary: #C62828;
+  --accent: #F5C7C7;
+}
+
+.resume.traditional-corporate.theme-teal {
+  --primary: #00897B;
+  --accent: #B2DFDB;
+}
+
+.resume.traditional-corporate.theme-charcoal {
+  --primary: #37474F;
+  --accent: #CFD8DC;
+}
+
+.resume.traditional-corporate.theme-navy {
+  --primary: #1E3A5F;
+  --accent: #A9C0DA;
+}
+
+.resume.traditional-corporate.theme-burgundy {
+  --primary: #7A1F2B;
+  --accent: #D9AEB3;
+}
+
+.resume.traditional-corporate.theme-olive {
+  --primary: #5B6B3D;
+  --accent: #C7D1AE;
+}
+
+.resume.traditional-corporate.theme-slate {
+  --primary: #475569;
+  --accent: #C4CCD6;
+}
+
+.resume.traditional-corporate.theme-gold {
+  --primary: #B8860B;
+  --accent: #EBD49B;
+}
+
+.resume.traditional-corporate.theme-indigo {
+  --primary: #4338CA;
+  --accent: #C7C2F0;
+}
+
+.traditional-corporate .tc-header {
+  text-align: center;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 5mm;
+  margin-bottom: 7mm;
+}
+
+.traditional-corporate .tc-name {
+  font-family: var(--font-heading);
+  font-size: 19pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--heading);
+  margin: 0 0 1.6mm;
+}
+
+.traditional-corporate .tc-title {
+  font-size: 10.6pt;
+  font-weight: 600;
+  color: var(--secondary);
+  margin: 0 0 3mm;
+}
+
+.traditional-corporate .tc-contact {
+  font-size: 9pt;
+  color: var(--text);
+  margin: 0;
+}
+
+.traditional-corporate .tc-heading {
+  font-family: var(--font-heading);
+  font-size: 11pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--heading);
+  border-bottom: 1px solid #c9c9c9;
+  padding-bottom: 1.4mm;
+  margin: 0 0 3.4mm;
+}
+
+.traditional-corporate .tc-section {
+  margin-bottom: 6.4mm;
+}
+
+.traditional-corporate .tc-section p {
+  margin: 0 0 1.4mm;
+}
+
+.traditional-corporate .tc-entry {
+  margin-bottom: 4.6mm;
+}
+
+.traditional-corporate .tc-entry-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+}
+
+.traditional-corporate .tc-entry-title {
+  font-size: 10.2pt;
+  color: var(--text);
+}
+
+.traditional-corporate .tc-entry-date {
+  font-size: 9pt;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+.traditional-corporate .tc-entry-loc {
+  margin: 0.6mm 0 0;
+  font-size: 9pt;
+  font-style: italic;
+  color: var(--secondary);
+}
+
+.traditional-corporate .tc-entry-desc p {
+  margin: 1.4mm 0 0;
+  font-size: 9.6pt;
+}
+
+.traditional-corporate .tc-list {
+  margin: 0;
+  padding-left: 5mm;
+  font-size: 9.6pt;
+}
+
+.traditional-corporate .tc-list li {
+  margin-bottom: 1.4mm;
+}
+
+.traditional-corporate .tc-inline-list {
+  font-size: 9.6pt;
+  margin: 0;
+}
+
+.traditional-corporate .tc-reference {
+  font-size: 9.6pt;
+  margin: 0 0 2mm;
+}

@@ -1,0 +1,9 @@
+{
+  "id": "clean-academic",
+  "name": "Clean Academic",
+  "description": "Academic CV style with emphasis on education, publications, and research. Structured for academia and research roles.",
+  "category": "academic",
+  "thumbnail": "",
+  "features": ["Education-first", "Publications support", "Research focus", "Formal structure"],
+  "best_for": ["Academia", "Research", "PhD candidates", "Medical professionals"]
+}

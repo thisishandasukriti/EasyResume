@@ -1,0 +1,9 @@
+{
+  "id": "elegant-two-column",
+  "name": "Elegant Two-Column",
+  "description": "Balanced two-column layout with refined typography. Left column for compact info, right for detailed experience.",
+  "category": "elegant",
+  "thumbnail": "",
+  "features": ["Balanced columns", "Refined typography", "High information density", "Professional aesthetic"],
+  "best_for": ["Marketing", "Communications", "Project Managers", "Business Analysts"]
+}

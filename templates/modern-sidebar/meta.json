@@ -1,0 +1,9 @@
+{
+  "id": "modern-sidebar",
+  "name": "Modern Sidebar",
+  "description": "Contemporary two-column layout with a prominent sidebar for personal info and skills. Perfect for tech and creative professionals.",
+  "category": "modern",
+  "thumbnail": "",
+  "features": ["Two-column", "Sidebar navigation", "Visual hierarchy", "ATS-friendly"],
+  "best_for": ["Software Engineers", "Designers", "Product Managers", "Tech Professionals"]
+}

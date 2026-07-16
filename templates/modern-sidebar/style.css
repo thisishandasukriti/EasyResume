@@ -1,0 +1,279 @@
+/* ------------------------------------------------------------------
+ * templates/modern-sidebar/style.css
+ * Layout: two columns. A colored sidebar (contact, skills, languages,
+ * interests, certifications) sits beside a white main column
+ * (summary, experience, education, projects, achievements, references).
+ * Shadows are screen-only (stripped in print) to stay safe for PDF/print
+ * rendering. Sidebar background uses print-color-adjust so it survives
+ * "background graphics off" print settings as much as possible.
+ * ------------------------------------------------------------------ */
+
+.resume.modern-sidebar {
+    --primary: #2F5D8A;
+    --secondary: #BFD7EA;
+    --accent: #F2A65A;
+    --sidebar-bg: #1F3A5F;
+    --sidebar-text: #E8EEF5;
+    --sidebar-dim: #A9BFD6;
+    --background: #ffffff;
+    --text: #28313C;
+    --heading: #16263A;
+
+    --font-heading: 'Poppins', Arial, sans-serif;
+    --font-body: 'Roboto', Arial, sans-serif;
+
+    font-family: var(--font-body);
+    font-size: 10.2pt;
+    line-height: 1.5;
+    display: flex;
+    min-height: 100%;
+}
+
+.resume.modern-sidebar.theme-orange {
+    --sidebar-bg: #cc751eef;
+    --accent: #BFD0FF;
+}
+
+.resume.modern-sidebar.theme-blue {
+    --sidebar-bg: #2454FF;
+    --accent: #BFD0FF;
+}
+
+.resume.modern-sidebar.theme-green {
+    --sidebar-bg: #2E7D32;
+    --accent: #C8E6C9;
+}
+
+.resume.modern-sidebar.theme-purple {
+    --sidebar-bg: #6C63FF;
+    --accent: #D9D4FF;
+}
+
+.resume.modern-sidebar.theme-red {
+    --sidebar-bg: #C62828;
+    --accent: #F5C7C7;
+}
+
+.resume.modern-sidebar.theme-teal {
+    --sidebar-bg: #00897B;
+    --accent: #B2DFDB;
+}
+
+.resume.modern-sidebar.theme-charcoal {
+    --sidebar-bg: #37474F;
+    --accent: #CFD8DC;
+}
+
+.resume.modern-sidebar.theme-navy {
+    --sidebar-bg: #1E3A5F;
+    --accent: #A9C0DA;
+}
+
+.resume.modern-sidebar.theme-burgundy {
+    --sidebar-bg: #7A1F2B;
+    --accent: #D9AEB3;
+}
+
+.resume.modern-sidebar.theme-olive {
+    --sidebar-bg: #5B6B3D;
+    --accent: #C7D1AE;
+}
+
+.resume.modern-sidebar.theme-slate {
+    --sidebar-bg: #475569;
+    --accent: #C4CCD6;
+}
+
+.resume.modern-sidebar.theme-gold {
+    --sidebar-bg: #B8860B;
+    --accent: #EBD49B;
+}
+
+.resume.modern-sidebar.theme-indigo {
+    --sidebar-bg: #4338CA;
+    --accent: #C7C2F0;
+}
+
+/* ---------- SIDEBAR ---------- */
+.modern-sidebar .ms-sidebar {
+    width: 35%;
+    flex-shrink: 0;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 12mm 8mm 12mm 12mm;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+}
+
+.modern-sidebar .ms-identity {
+    margin-bottom: 8mm;
+}
+
+.modern-sidebar .ms-name {
+    font-family: var(--font-heading);
+    font-size: 16pt;
+    font-weight: 700;
+    margin: 0 0 1.6mm;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.modern-sidebar .ms-title {
+    font-size: 9.6pt;
+    font-weight: 500;
+    color: var(--accent);
+    margin: 0;
+}
+
+.modern-sidebar .ms-block {
+    margin-bottom: 6.5mm;
+}
+
+.modern-sidebar .ms-heading {
+    font-family: var(--font-heading);
+    font-size: 9.4pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin: 0 0 2.6mm;
+    padding-bottom: 1.6mm;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modern-sidebar .ms-contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 8.8pt;
+    color: var(--sidebar-text);
+}
+
+.modern-sidebar .ms-contact li {
+    margin-bottom: 1.6mm;
+    word-break: break-word;
+}
+
+.modern-sidebar .ms-tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6mm;
+}
+
+.modern-sidebar .ms-tags li {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--sidebar-text);
+    border-radius: 999px;
+    padding: 1mm 2.8mm;
+    font-size: 8.2pt;
+}
+
+.modern-sidebar .ms-simple-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 8.8pt;
+}
+
+.modern-sidebar .ms-simple-list li {
+    margin-bottom: 2.2mm;
+    line-height: 1.4;
+}
+
+.modern-sidebar .ms-dim {
+    color: var(--sidebar-dim);
+    font-size: 8pt;
+}
+
+/* ---------- MAIN COLUMN ---------- */
+.modern-sidebar .ms-main {
+    width: 65%;
+    background: var(--background);
+    color: var(--text);
+    padding: 12mm 12mm 12mm 9mm;
+}
+
+.modern-sidebar .ms-section {
+    margin-bottom: 6mm;
+}
+
+.modern-sidebar .ms-main-heading {
+    font-family: var(--font-heading);
+    font-size: 11.4pt;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 0 0 3.2mm;
+    padding-bottom: 1.6mm;
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+}
+
+.modern-sidebar .ms-section p {
+    margin: 0 0 1.4mm;
+    font-size: 9.4pt;
+}
+
+.modern-sidebar .ms-entry {
+    margin-bottom: 4.5mm;
+}
+
+.modern-sidebar .ms-entry-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 3mm;
+}
+
+.modern-sidebar .ms-entry-title {
+    font-family: var(--font-heading);
+    font-size: 10.2pt;
+    font-weight: 600;
+    margin: 0;
+    color: var(--heading);
+}
+
+.modern-sidebar .ms-entry-sub {
+    font-size: 9pt;
+    color: var(--primary);
+    margin: 0.4mm 0 0;
+    font-weight: 500;
+}
+
+.modern-sidebar .ms-entry-date {
+    font-size: 8.4pt;
+    color: #5b6b7a;
+    white-space: nowrap;
+}
+
+.modern-sidebar .ms-entry-desc p {
+    margin: 1.4mm 0 0;
+}
+
+.modern-sidebar .ms-simple-list-main {
+    margin: 0;
+    padding-left: 4mm;
+}
+
+.modern-sidebar .ms-simple-list-main li {
+    margin-bottom: 1.4mm;
+    font-size: 9.2pt;
+}
+
+.modern-sidebar .ms-inline {
+    font-size: 9.2pt;
+}
+
+@media screen {
+    .modern-sidebar {
+        box-shadow: 0 1px 3px rgba(20, 30, 40, 0.08);
+    }
+}
+
+@media print {
+    .modern-sidebar {
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,285 @@
+{
+  "data_analyst": {
+    "label": "Data Analyst",
+    "icon": "📊",
+    "skills": [
+      "SQL",
+      "Python",
+      "R",
+      "Excel",
+      "Tableau",
+      "Power BI",
+      "PowerBI",
+      "Data Visualization",
+      "Statistical Analysis",
+      "Data Cleaning",
+      "ETL",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Google Analytics",
+      "A/B Testing",
+      "Business Intelligence",
+      "Reporting",
+      "Data Warehousing",
+      "Looker"
+    ],
+    "tools": [
+      "Excel",
+      "Tableau",
+      "Power BI",
+      "Looker",
+      "Google Data Studio",
+      "Jupyter Notebook"
+    ],
+    "certifications": [
+      "Google Data Analytics",
+      "Tableau Desktop Specialist",
+      "Microsoft Power BI"
+    ]
+  },
+  "python_developer": {
+    "label": "Python Developer",
+    "icon": "🐍",
+    "skills": [
+      "Python",
+      "Django",
+      "Flask",
+      "FastAPI",
+      "REST APIs",
+      "REST",
+      "SQL",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Git",
+      "Unit Testing",
+      "pytest",
+      "Celery",
+      "Object-Oriented Programming",
+      "Object Oriented Programming",
+      "Data Structures",
+      "Algorithms",
+      "Linux",
+      "CI/CD",
+      "Continuous Integration",
+      "Microservices",
+      "SQLAlchemy"
+    ],
+    "tools": [
+      "PyCharm",
+      "VS Code",
+      "Git",
+      "Docker",
+      "Postman",
+      "Linux"
+    ],
+    "certifications": [
+      "Python Institute PCEP",
+      "Python Institute PCAP",
+      "AWS Developer Associate"
+    ]
+  },
+  "fullstack_developer": {
+    "label": "Full Stack Developer",
+    "icon": "🖥️",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Express",
+      "HTML",
+      "CSS",
+      "SQL",
+      "MongoDB",
+      "REST APIs",
+      "REST",
+      "GraphQL",
+      "Git",
+      "Docker",
+      "AWS",
+      "CI/CD",
+      "Continuous Integration",
+      "Redux",
+      "Next.js",
+      "PostgreSQL",
+      "Testing",
+      "Responsive Design",
+      "Web Security"
+    ],
+    "tools": [
+      "VS Code",
+      "Git",
+      "Docker",
+      "Postman",
+      "Figma",
+      "AWS Console"
+    ],
+    "certifications": [
+      "AWS Solutions Architect",
+      "Meta Frontend Developer",
+      "MongoDB Associate Developer"
+    ]
+  },
+  "ml_engineer": {
+    "label": "ML Engineer",
+    "icon": "🤖",
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "Machine-Learning",
+      "Deep Learning",
+      "TensorFlow",
+      "PyTorch",
+      "scikit-learn",
+      "NLP",
+      "Natural Language Processing",
+      "Computer Vision",
+      "Data Preprocessing",
+      "Feature Engineering",
+      "Model Deployment",
+      "MLOps",
+      "Docker",
+      "Kubernetes",
+      "SQL",
+      "Spark",
+      "Hadoop",
+      "Statistics",
+      "Neural Networks",
+      "Transformers",
+      "LLMs",
+      "Large Language Models"
+    ],
+    "tools": [
+      "Jupyter Notebook",
+      "TensorFlow",
+      "PyTorch",
+      "MLflow",
+      "Weights & Biases",
+      "Kubernetes"
+    ],
+    "certifications": [
+      "Google Professional ML Engineer",
+      "AWS Machine Learning Specialty",
+      "DeepLearning.AI TensorFlow Developer"
+    ]
+  },
+  "frontend_developer": {
+    "label": "Frontend Developer",
+    "icon": "🎨",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Vue.js",
+      "Angular",
+      "Responsive Design",
+      "CSS Animations",
+      "SASS/SCSS",
+      "Webpack",
+      "Vite",
+      "Testing",
+      "Git",
+      "REST APIs",
+      "REST",
+      "Performance Optimization",
+      "Accessibility",
+      "Figma",
+      "Web Components",
+      "PWA"
+    ],
+    "tools": [
+      "VS Code",
+      "Figma",
+      "Chrome DevTools",
+      "Webpack",
+      "Vite",
+      "Git"
+    ],
+    "certifications": [
+      "Meta Frontend Developer",
+      "Google UX Design",
+      "W3C Front-End Web Developer"
+    ]
+  },
+  "software_developer": {
+    "label": "Software Developer",
+    "icon": "💻",
+    "skills": [
+      "Java",
+      "Python",
+      "C++",
+      "C#",
+      "SQL",
+      "Git",
+      "Object-Oriented Programming",
+      "Object Oriented Programming",
+      "Data Structures",
+      "Algorithms",
+      "Problem Solving",
+      "REST APIs",
+      "REST",
+      "Unit Testing",
+      "Debugging",
+      "Linux",
+      "Agile",
+      "CI/CD",
+      "Continuous Integration"
+    ],
+    "tools": [
+      "VS Code",
+      "Git",
+      "Jira",
+      "Postman"
+    ],
+    "certifications": [
+      "Oracle Java Foundations",
+      "AWS Developer Associate"
+    ]
+  },
+  "ai_engineer": {
+    "label": "AI Engineer",
+    "icon": "🧠",
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "Machine-Learning",
+      "Deep Learning",
+      "TensorFlow",
+      "PyTorch",
+      "LLMs",
+      "Large Language Models",
+      "NLP",
+      "Natural Language Processing",
+      "Prompt Engineering",
+      "Transformers",
+      "LangChain",
+      "RAG",
+      "Vector Databases",
+      "OpenAI API",
+      "Model Fine-Tuning",
+      "MLOps",
+      "Docker",
+      "Kubernetes",
+      "SQL",
+      "API Development"
+    ],
+    "tools": [
+      "Jupyter Notebook",
+      "PyTorch",
+      "TensorFlow",
+      "Docker",
+      "Kubernetes",
+      "Postman"
+    ],
+    "certifications": [
+      "Google Professional ML Engineer",
+      "AWS Machine Learning Specialty",
+      "Microsoft Azure AI Engineer Associate"
+    ]
+  }
+}

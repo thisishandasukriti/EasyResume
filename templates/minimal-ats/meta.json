@@ -1,0 +1,9 @@
+{
+  "id": "minimal-ats",
+  "name": "Minimal ATS",
+  "description": "Ultra-clean, distraction-free design optimized for ATS parsing. Maximum readability with zero visual noise.",
+  "category": "minimal",
+  "thumbnail": "",
+  "features": ["ATS-optimized", "Clean typography", "No graphics", "Fast parsing"],
+  "best_for": ["All industries", "Online applications", "ATS-heavy companies", "Career changers"]
+}

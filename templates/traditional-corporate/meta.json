@@ -1,0 +1,9 @@
+{
+  "id": "traditional-corporate",
+  "name": "Traditional Corporate",
+  "description": "Classic single-column layout with clear section hierarchy. Ideal for conservative industries like finance, legal, and government.",
+  "category": "traditional",
+  "thumbnail": "",
+  "features": ["Single column", "Clear hierarchy", "Conservative styling", "Highly ATS-compatible"],
+  "best_for": ["Finance", "Legal", "Government", "Corporate Executives"]
+}

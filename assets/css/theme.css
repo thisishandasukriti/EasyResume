@@ -1,0 +1,783 @@
+/* ==========================================================================
+   EasyResume Design System — theme.css
+   Single source of truth for color, type, spacing, components, and themes.
+   Every page should link this file BEFORE any page-specific CSS.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. THEME VARIABLES (Light = default, Dark = [data-theme="dark"])
+   -------------------------------------------------------------------------- */
+:root {
+    /* Brand (fixed across themes) */
+    --brand-start: #6c63ff;
+    --brand-end: #3a1c8e;
+    --brand-gradient: linear-gradient(135deg, var(--brand-start), var(--brand-end));
+
+    /* Light mode surface & text */
+    --bg-page: #f9f9f9;
+    --bg-alt: #f8f8f8;
+    --bg-surface: #ffffff;
+    --bg-surface-2: #f1f1f1;
+    --text-primary: #2c2c2c;
+    --text-secondary: #6b6b6b;
+    --text-on-brand: #ffffff;
+    --border-color: rgba(0, 0, 0, 0.08);
+
+    /* Glass (subtle in light mode) */
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-blur: 16px;
+    --glass-shadow: 0 8px 24px rgba(60, 40, 130, 0.08);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+    /* Status colors */
+    --color-success: #1f9d55;
+    --color-success-bg: rgba(31, 157, 85, 0.1);
+    --color-warning: #b8860b;
+    --color-warning-bg: rgba(184, 134, 11, 0.1);
+    --color-danger: #d6336c;
+    --color-danger-bg: rgba(214, 51, 108, 0.1);
+    --color-info: var(--brand-start);
+    --color-info-bg: rgba(108, 99, 255, 0.1);
+
+    /* Typography */
+    --font-display: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* Spacing scale */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 40px;
+    --space-xl: 64px;
+
+    /* Radii */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+
+    /* Motion */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-page: #14111f;
+    --bg-alt: #181426;
+    --bg-surface: #1d1830;
+    --bg-surface-2: #241d3a;
+    --text-primary: #f1eefb;
+    --text-secondary: #b3acc9;
+    --text-on-brand: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.08);
+
+    --glass-bg: rgba(40, 32, 64, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-blur: 20px;
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+
+    --color-success-bg: rgba(31, 157, 85, 0.18);
+    --color-warning-bg: rgba(184, 134, 11, 0.18);
+    --color-danger-bg: rgba(214, 51, 108, 0.18);
+    --color-info-bg: rgba(108, 99, 255, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    margin: 0 0 var(--space-sm) 0;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   3. NAVBAR
+   -------------------------------------------------------------------------- */
+.navbar {
+    background-color: var(--bg-surface);
+    padding: 18px 0;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+[data-theme="dark"] .navbar {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.navbar-brand span {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.navbar-brand-icon {
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 24px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: var(--radius-pill);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--brand-start);
+    outline-offset: 2px;
+}
+
+.btn-home,
+.btn-login,
+.btn-primary {
+    background: var(--brand-gradient);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-home:hover,
+.btn-login:hover,
+.btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(108, 99, 255, 0.35);
+}
+
+.btn-templates,
+.btn-signup,
+.btn-secondary {
+    background-color: var(--bg-surface-2);
+    color: var(--text-primary);
+}
+
+.btn-templates:hover,
+.btn-signup:hover,
+.btn-secondary:hover {
+    background-color: var(--border-color);
+}
+
+.btn-ai {
+    background: transparent;
+    color: var(--brand-start);
+    font-weight: 600;
+    border: 1px solid rgba(108, 99, 255, 0.35);
+}
+
+.btn-ai:hover {
+    background: var(--color-info-bg);
+}
+
+/* Theme toggle */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--bg-surface-2);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+}
+
+/* Mobile nav toggle */
+.navbar-toggler-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar-toggler-btn {
+        display: block;
+    }
+
+    .nav-buttons {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: var(--space-sm);
+        align-items: stretch;
+    }
+
+    .nav-buttons.open {
+        display: flex;
+    }
+
+    .navbar-content {
+        flex-wrap: wrap;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO / HEADER
+   -------------------------------------------------------------------------- */
+.header {
+    background: var(--brand-gradient);
+    color: #fff;
+    padding: var(--space-xl) 20px;
+    text-align: center;
+}
+
+.header h4 {
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+}
+
+.header h1 {
+    color: #fff;
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 720px;
+    margin: 0 auto var(--space-md) auto;
+    font-size: 18px;
+}
+
+.header .btn-primary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    margin: 0 8px;
+}
+
+.header .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   5. CARDS & GLASSMORPHISM
+   -------------------------------------------------------------------------- */
+.card {
+    background-color: var(--bg-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Glass variant — used for AI tool cards, dashboard cards, ATS results, etc. */
+.card-glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    padding: var(--space-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card-glass:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.section-item {
+    background-color: var(--bg-surface);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    flex: 1 1 30%;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.section-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.section-item-icon {
+    font-size: 40px;
+    color: var(--brand-start);
+}
+
+.section-item-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: var(--space-sm) 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. FORM CONTROLS
+   -------------------------------------------------------------------------- */
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--text-primary);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--brand-start);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.18);
+}
+
+label {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   7. BADGES & ALERTS
+   -------------------------------------------------------------------------- */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-success {
+    background: var(--color-success-bg);
+    color: var(--color-success);
+}
+
+.badge-warning {
+    background: var(--color-warning-bg);
+    color: var(--color-warning);
+}
+
+.badge-danger {
+    background: var(--color-danger-bg);
+    color: var(--color-danger);
+}
+
+.badge-info {
+    background: var(--color-info-bg);
+    color: var(--color-info);
+}
+
+.alert {
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--brand-start);
+    background: var(--color-info-bg);
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.alert-success {
+    border-color: var(--color-success);
+    background: var(--color-success-bg);
+}
+
+.alert-warning {
+    border-color: var(--color-warning);
+    background: var(--color-warning-bg);
+}
+
+.alert-danger {
+    border-color: var(--color-danger);
+    background: var(--color-danger-bg);
+}
+
+/* --------------------------------------------------------------------------
+   8. MODALS
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 8, 20, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-lg);
+    max-width: 480px;
+    width: 90%;
+}
+
+/* --------------------------------------------------------------------------
+   9. AI RESULT PANELS (ATS / skill extraction / role optimizer / cover letter)
+   -------------------------------------------------------------------------- */
+.ai-result-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    padding: var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   10. FOOTER
+   -------------------------------------------------------------------------- */
+.footer {
+    background-color: #211c33;
+    color: rgba(255, 255, 255, 0.85);
+    padding: var(--space-lg) 20px;
+    text-align: center;
+}
+
+[data-theme="dark"] .footer {
+    background-color: var(--bg-alt);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer p {
+    color: inherit;
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer span {
+    font-weight: 700;
+    color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   11. UTILITIES
+   -------------------------------------------------------------------------- */
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .header {
+        padding: var(--space-lg) 16px;
+    }
+
+    .section-one-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-one-l,
+    .section-one-r {
+        max-width: 100%;
+    }
+
+    .section-items {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* ==========================================================================
+   13. HOMEPAGE COMPATIBILITY LAYER
+   Supports both the original EasyResume pages and future refactored pages.
+   ========================================================================== */
+
+.brand-and-toggler {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.lg-title {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    max-width: 100%;
+    margin-top: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.section-one,
+.section-two {
+    padding: var(--space-xl) 0;
+}
+
+.section-one-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+}
+
+.section-one-l,
+.section-one-r {
+    flex: 1;
+}
+
+.section-items {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Better hero button hierarchy */
+
+.header .btn-secondary {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--brand-start);
+}
+
+.header .btn-secondary {
+    background: #ffffff;
+}
+
+.header .btn-primary {
+    margin: 0 8px;
+}
+
+/* Optional glass effect in dark mode */
+
+[data-theme="dark"] .section-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 768px) {
+
+    .section-one-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-items {
+        flex-direction: column;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-actions .btn,
+    .btn-group .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .lg-title {
+        font-size: 34px;
+    }
+}

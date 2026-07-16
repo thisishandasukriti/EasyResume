@@ -1,0 +1,243 @@
+/* ------------------------------------------------------------------
+ * templates/modern-card/style.css
+ * Layout: plain header row, then every section rendered as a bordered
+ * card with a colored left edge. Shadows are screen-only (stripped in
+ * print) to stay safe for PDF/print rendering.
+ * ------------------------------------------------------------------ */
+
+.resume.modern-card {
+  --primary: #0E8388;
+  --secondary: #2E4F4F;
+  --accent: #6FCABF;
+  --background: #ffffff;
+  --text: #233333;
+  --heading: #15292B;
+
+  --font-heading: 'Poppins', Arial, sans-serif;
+  --font-body: 'Roboto', Arial, sans-serif;
+
+  font-family: var(--font-body);
+  font-size: 10.2pt;
+  line-height: 1.5;
+  padding: 14mm 14mm 12mm;
+}
+
+
+.resume.modern-card.theme-blue {
+  --primary: #2454FF;
+  --accent: #BFD0FF;
+}
+
+.resume.modern-card.theme-green {
+  --primary: #2E7D32;
+  --accent: #C8E6C9;
+}
+
+.resume.modern-card.theme-purple {
+  --primary: #6C63FF;
+  --accent: #D9D4FF;
+}
+
+.resume.modern-card.theme-red {
+  --primary: #C62828;
+  --accent: #F5C7C7;
+}
+
+.resume.modern-card.theme-teal {
+  --primary: #00897B;
+  --accent: #B2DFDB;
+}
+
+.resume.modern-card.theme-charcoal {
+  --primary: #37474F;
+  --accent: #CFD8DC;
+}
+
+.resume.modern-card.theme-navy {
+  --primary: #1E3A5F;
+  --accent: #A9C0DA;
+}
+
+.resume.modern-card.theme-burgundy {
+  --primary: #7A1F2B;
+  --accent: #D9AEB3;
+}
+
+.resume.modern-card.theme-olive {
+  --primary: #5B6B3D;
+  --accent: #C7D1AE;
+}
+
+.resume.modern-card.theme-slate {
+  --primary: #475569;
+  --accent: #C4CCD6;
+}
+
+.resume.modern-card.theme-gold {
+  --primary: #B8860B;
+  --accent: #EBD49B;
+}
+
+.resume.modern-card.theme-indigo {
+  --primary: #4338CA;
+  --accent: #C7C2F0;
+}
+
+.modern-card .mc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 6mm;
+  padding-bottom: 6mm;
+  margin-bottom: 7mm;
+  border-bottom: 1px solid #dfe7e6;
+}
+
+.modern-card .mc-name {
+  font-family: var(--font-heading);
+  font-size: 18pt;
+  font-weight: 700;
+  margin: 0 0 1.4mm;
+  color: var(--heading);
+}
+
+.modern-card .mc-title {
+  font-size: 10.4pt;
+  color: var(--primary);
+  font-weight: 500;
+  margin: 0;
+}
+
+.modern-card .mc-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  font-size: 8.8pt;
+  color: var(--secondary);
+}
+
+.modern-card .mc-contact li {
+  margin-bottom: 0.8mm;
+}
+
+.modern-card .mc-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 5mm;
+}
+
+.modern-card .mc-card {
+  border: 1px solid #dfe7e6;
+  border-left: 3px solid var(--primary);
+  border-radius: 6px;
+  padding: 5mm 6mm;
+  background: #fff;
+}
+
+.modern-card .mc-heading {
+  font-family: var(--font-heading);
+  font-size: 10.6pt;
+  font-weight: 600;
+  color: var(--heading);
+  margin: 0 0 3mm;
+  display: flex;
+  align-items: center;
+  gap: 2.2mm;
+}
+
+.modern-card .mc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: inline-block;
+}
+
+.modern-card .mc-card p {
+  margin: 0 0 1.4mm;
+  font-size: 9.4pt;
+}
+
+.modern-card .mc-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8mm;
+}
+
+.modern-card .mc-tags li {
+  background: rgba(14, 131, 136, 0.08);
+  border: 1px solid rgba(14, 131, 136, 0.25);
+  color: var(--secondary);
+  border-radius: 999px;
+  padding: 1.2mm 3mm;
+  font-size: 8.6pt;
+}
+
+.modern-card .mc-entry {
+  margin-bottom: 4mm;
+}
+
+.modern-card .mc-entry-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 3mm;
+}
+
+.modern-card .mc-entry-title {
+  font-family: var(--font-heading);
+  font-size: 10pt;
+  font-weight: 600;
+  margin: 0;
+  color: var(--heading);
+}
+
+.modern-card .mc-entry-sub {
+  font-size: 9pt;
+  color: var(--primary);
+  margin: 0.4mm 0 0;
+}
+
+.modern-card .mc-entry-date {
+  font-size: 8.4pt;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+.modern-card .mc-entry-desc p {
+  margin: 1.4mm 0 0;
+}
+
+.modern-card .mc-simple-list {
+  margin: 0 0 1.6mm;
+  padding-left: 4mm;
+}
+
+.modern-card .mc-simple-list li {
+  margin-bottom: 1.2mm;
+  font-size: 9.2pt;
+}
+
+.modern-card .mc-dim {
+  color: var(--secondary);
+  font-size: 8.6pt;
+}
+
+.modern-card .mc-inline {
+  font-size: 9.2pt;
+}
+
+@media screen {
+  .modern-card .mc-card {
+    box-shadow: 0 1px 2px rgba(20, 40, 40, 0.06);
+  }
+}
+
+@media print {
+  .modern-card .mc-card {
+    box-shadow: none;
+  }
+}

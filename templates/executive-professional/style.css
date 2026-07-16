@@ -1,0 +1,185 @@
+/* ------------------------------------------------------------------
+ * templates/executive-professional/style.css
+ * Layout: full-width banner header + two-column body (wide main /
+ * narrow side). Serif display face for an authoritative, senior feel.
+ *
+ * Sprint 2 / Phase 2: color comes entirely from assets/resume-themes.css.
+ * --banner-bg stays as a local composed variable since it's specific
+ * to this template's layout (the dark banner), not a global concept.
+ * ------------------------------------------------------------------ */
+
+.resume.executive-professional {
+  --banner-bg: var(--secondary);
+
+  --font-heading: 'Lora', Georgia, serif;
+  --font-body: 'Lato', Arial, sans-serif;
+
+  font-family: var(--font-body);
+  font-size: 10.2pt;
+  line-height: 1.5;
+}
+
+.executive-professional .ep-banner {
+  background: var(--banner-bg);
+  color: #F4EEE3;
+  padding: 14mm 16mm 9mm;
+  text-align: center;
+}
+
+.executive-professional .ep-name {
+  font-family: var(--font-heading);
+  font-size: 22pt;
+  font-weight: 600;
+  margin: 0 0 1.6mm;
+  letter-spacing: 0.01em;
+}
+
+.executive-professional .ep-title {
+  font-size: 11pt;
+  color: var(--accent);
+  margin: 0 0 4mm;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.executive-professional .ep-contact {
+  font-size: 8.8pt;
+  color: rgba(244, 238, 227, 0.8);
+  margin: 0;
+}
+
+.executive-professional .ep-body {
+  display: flex;
+  gap: 9mm;
+  padding: 9mm 16mm 14mm;
+}
+
+.executive-professional .ep-main {
+  flex: 1 1 68%;
+  min-width: 0;
+}
+
+.executive-professional .ep-side {
+  flex: 1 1 28%;
+  min-width: 0;
+  border-left: 1px solid var(--border);
+  padding-left: 7mm;
+}
+
+.executive-professional .ep-heading {
+  font-family: var(--font-heading);
+  font-size: 12.5pt;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 3.4mm;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.6mm;
+}
+
+.executive-professional .ep-section {
+  margin-bottom: 6.6mm;
+}
+
+.executive-professional .ep-section p {
+  margin: 0 0 1.4mm;
+}
+
+.executive-professional .ep-entry {
+  margin-bottom: 5mm;
+}
+
+.executive-professional .ep-entry-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+}
+
+.executive-professional .ep-entry-title {
+  font-family: var(--font-heading);
+  font-size: 10.8pt;
+  font-weight: 600;
+  margin: 0;
+  color: var(--heading);
+}
+
+.executive-professional .ep-entry-sub {
+  margin: 0.6mm 0 0;
+  font-size: 9.4pt;
+  color: var(--primary);
+}
+
+.executive-professional .ep-entry-date {
+  font-size: 8.6pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.executive-professional .ep-entry-desc p {
+  margin: 1.4mm 0 0;
+  font-size: 9.4pt;
+}
+
+.executive-professional .ep-side-heading {
+  font-family: var(--font-heading);
+  font-size: 10pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary);
+  margin: 0 0 2.6mm;
+}
+
+.executive-professional .ep-block {
+  margin-bottom: 6mm;
+}
+
+.executive-professional .ep-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.executive-professional .ep-tags li {
+  font-size: 9pt;
+  padding: 1.2mm 0;
+  border-bottom: 1px dotted var(--border);
+}
+
+.executive-professional .ep-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 9pt;
+}
+
+.executive-professional .ep-list li {
+  margin-bottom: 1.6mm;
+}
+
+.executive-professional .ep-dim {
+  color: var(--muted);
+  font-size: 8.4pt;
+}
+
+.executive-professional .ep-inline {
+  font-size: 9pt;
+  margin: 0;
+}
+
+.executive-professional .ep-reference {
+  font-size: 8.8pt;
+  margin: 0 0 3mm;
+}
+
+@media (max-width: 900px) {
+  .executive-professional .ep-body {
+    flex-direction: column;
+  }
+
+  .executive-professional .ep-side {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 6mm;
+  }
+}

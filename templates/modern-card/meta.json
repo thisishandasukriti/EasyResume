@@ -1,0 +1,9 @@
+{
+  "id": "modern-card-style",
+  "name": "Modern Card Style",
+  "description": "Card-based modular layout with subtle shadows and spacing. Each section is a distinct visual card.",
+  "category": "modern",
+  "thumbnail": "",
+  "features": ["Card-based sections", "Modular design", "Visual separation", "Contemporary feel"],
+  "best_for": ["Creative roles", "Startups", "Digital professionals", "Portfolio-heavy"]
+}

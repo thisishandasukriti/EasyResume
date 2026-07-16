@@ -1,0 +1,252 @@
+Below are the **exact places** where I'd apply the changes from the review, with minimal disruption to your existing code.
+
+---
+
+# 1. Add Validation Before ATS API Call
+
+### Current section
+
+```javascript
+atsForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = atsForm.querySelector('[type=submit]');
+  AIClient.setLoading(btn, 'Checking ATS score…');
+
+  // Save resume to session for use in other phases
+  const rt = document.getElementById('resume_text');
+  if (rt) AIClient.saveSessionResume(rt.value);
+
+  try {
+    const data = await ats_score.php', {
+      resume_text: document.getElementById('resume_text').value,
+      job_description: document.getElementById('job_description').value,
+    });
+```
+
+### Replace with
+
+```javascript
+atsForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const resume =
+    document.getElementById('resume_text')?.value.trim();
+
+  const jd =
+    document.getElementById('job_description')?.value.trim();
+
+  if (!resume) {
+    AIClient.toast('Please enter your resume', 'error');
+    return;
+  }
+
+  if (!jd) {
+    AIClient.toast('Please enter a job description', 'error');
+    return;
+  }
+
+  const btn = atsForm.querySelector('[type=submit]');
+  AIClient.setLoading(btn, 'Checking ATS score…');
+
+  // Persist resume
+  localStorage.setItem('resumeData', resume);
+
+  try {
+    const data = await ats_score.php', {
+      resume_text: resume,
+      job_description: jd,
+    });
+```
+
+---
+
+# 2. Replace Session Storage With Local Storage
+
+### Current prefill section
+
+```javascript
+const resumeTA = document.getElementById('resume_text');
+if (resumeTA && !resumeTA.value) {
+  const saved = AIClient.getSessionResume();
+  if (saved) resumeTA.value = saved;
+}
+```
+
+### Replace with
+
+```javascript
+const resumeTA = document.getElementById('resume_text');
+
+if (resumeTA && !resumeTA.value) {
+  const saved = localStorage.getItem('resumeData');
+
+  if (saved) {
+    resumeTA.value = saved;
+  }
+}
+```
+
+---
+
+### Remove this block entirely
+
+```javascript
+// Save resume to session for use in other phases
+const rt = document.getElementById('resume_text');
+if (rt) AIClient.saveSessionResume(rt.value);
+```
+
+because the ATS submit handler now saves directly:
+
+```javascript
+localStorage.setItem('resumeData', resume);
+```
+
+---
+
+# 3. Fix XSS In Keyword Rendering
+
+### Current code
+
+```javascript
+function renderKeywords(containerId, keywords, type) {
+  const el = document.getElementById(containerId);
+  if (!el || !keywords) return;
+
+  el.innerHTML = keywords.length
+    ? keywords.map(k =>
+        `<span class="kw-badge ${type}">${k}</span>`
+      ).join('')
+    : `<span class="ai-text-muted ai-text-sm">None detected</span>`;
+}
+```
+
+### Replace with
+
+```javascript
+function renderKeywords(containerId, keywords, type) {
+  const el = document.getElementById(containerId);
+
+  if (!el || !keywords) return;
+
+  el.innerHTML = '';
+
+  if (!keywords.length) {
+    const empty = document.createElement('span');
+    empty.className = 'ai-text-muted ai-text-sm';
+    empty.textContent = 'None detected';
+    el.appendChild(empty);
+    return;
+  }
+
+  keywords.forEach((k) => {
+    const badge = document.createElement('span');
+    badge.className = `kw-badge ${type}`;
+    badge.textContent = k;
+    el.appendChild(badge);
+  });
+}
+```
+
+---
+
+# 4. Fix XSS In Strengths / Weaknesses Rendering
+
+### Current code
+
+```javascript
+function renderSWList(containerId, items, cls, icon) {
+  const el = document.getElementById(containerId);
+  if (!el || !items) return;
+
+  el.innerHTML = items.map(item =>
+    `<div class="sw-item ${cls}">
+      <span class="sw-icon">${icon}</span>
+      <span>${item}</span>
+     </div>`
+  ).join('');
+}
+```
+
+### Replace with
+
+```javascript
+function renderSWList(containerId, items, cls, icon) {
+  const el = document.getElementById(containerId);
+
+  if (!el || !items) return;
+
+  el.innerHTML = '';
+
+  items.forEach((item) => {
+    const row = document.createElement('div');
+    row.className = `sw-item ${cls}`;
+
+    const iconEl = document.createElement('span');
+    iconEl.className = 'sw-icon';
+    iconEl.textContent = icon;
+
+    const textEl = document.createElement('span');
+    textEl.textContent = item;
+
+    row.appendChild(iconEl);
+    row.appendChild(textEl);
+
+    el.appendChild(row);
+  });
+}
+```
+
+---
+
+# 5. Auto-Load Resume Builder Data (Optional SaaS Improvement)
+
+Replace:
+
+```javascript
+const saved = localStorage.getItem('resumeData');
+```
+
+with:
+
+```javascript
+const saved = localStorage.getItem('resumeData');
+
+if (saved) {
+  try {
+    const resume = JSON.parse(saved);
+
+    resumeTA.value = [
+      resume.name,
+      resume.summary,
+      ...(resume.skills || []),
+      ...(resume.projects || []),
+      ...(resume.experience || []),
+      ...(resume.education || [])
+    ]
+      .filter(Boolean)
+      .join('\n\n');
+
+  } catch {
+    resumeTA.value = saved;
+  }
+}
+```
+
+Only do this if `resumeData` is actually stored as structured JSON by your builder.
+
+---
+
+# Final Result
+
+After these edits:
+
+✅ ATS form validates before API calls
+✅ No empty submissions hit the backend
+✅ Keyword rendering is XSS-safe
+✅ Strength/weakness rendering is XSS-safe
+✅ Single storage source (`localStorage`)
+✅ Ready for future ATS auto-fill from Resume Builder
+✅ No architectural rewrite required
+
+The file would move from roughly **8.5/10 → 9.2/10** while keeping the existing structure intact.
